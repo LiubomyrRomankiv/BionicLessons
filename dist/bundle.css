@@ -1,0 +1,19 @@
+body {
+  background: #aaa; }
+  body .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #FFF;
+    border: 1px solid #fafafa;
+    padding: 40px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    body .container p {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 16px; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJidW5kbGUuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
