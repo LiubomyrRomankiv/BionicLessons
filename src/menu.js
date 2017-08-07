@@ -6,8 +6,9 @@ let drawActiveMenuItems = () => {
   
   for (let i = 0; i < menuItems.length; i++) {
     let href = menuItems[i].getAttribute('href');
+    let classList = menuItems[i].getAttribute('class');
     if (href === hash){
-      menuItems[i].style.color = 'red';
+      menuItems[i].setAttribute('class', classList + ' active');
       break;
     }
   }
@@ -26,8 +27,8 @@ let createMenu = ( selectorId, itemsArray ) => {
 };
 
 let createMenuItem = (item, itemId) => {
-  let menuItem = document.createElement('li');
-  let menuItemLink = document.createElement('a');
+  let menuItem = createElement('li');
+  let menuItemLink = createElement('a');
   menuItemLink.setAttribute('id','menu-item'+itemId);
   menuItemLink.setAttribute('class','menu-item menu-item'+itemId);
   menuItemLink.setAttribute('href',item.link);
@@ -35,6 +36,10 @@ let createMenuItem = (item, itemId) => {
   menuItem.appendChild(menuItemLink);
   return menuItem;
 };
+
+let createElement = (element) => {
+  return document.createElement(element);
+}
 
 export default {
   drawActiveMenuItems,

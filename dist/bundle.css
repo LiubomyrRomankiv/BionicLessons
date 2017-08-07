@@ -1,0 +1,22 @@
+body {
+  background: #fff; }
+  body ul.menu li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    float: left; }
+    body ul.menu li .menu-item {
+      display: block;
+      padding: 10px;
+      margin: 10px 3px;
+      font-family: sans-serif;
+      font-size: 14px;
+      color: #FFF;
+      background: #4b834e;
+      font-weight: normal;
+      text-decoration: none; }
+      body ul.menu li .menu-item:active, body ul.menu li .menu-item.active {
+        background: #47a84c;
+        font-weight: bold; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJidW5kbGUuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
