@@ -27,18 +27,39 @@ let createMenu = ( selectorId, itemsArray ) => {
 };
 
 let createMenuItem = (item, itemId) => {
+  let attributes = [
+    {
+      name: 'id',
+      val: 'menu-item'+itemId
+    },
+    {
+      name: 'class',
+      val: 'menu-item menu-item'+itemId
+    },
+    {
+      name: 'href',
+      val: item.link
+    }
+  ];
+
   let menuItem = createElement('li');
-  let menuItemLink = createElement('a');
-  menuItemLink.setAttribute('id','menu-item'+itemId);
-  menuItemLink.setAttribute('class','menu-item menu-item'+itemId);
-  menuItemLink.setAttribute('href',item.link);
-  menuItemLink.innerHTML = item.text;
+  let menuItemLink = createElement('a', attributes, item.text);  
+
   menuItem.appendChild(menuItemLink);
   return menuItem;
 };
 
-let createElement = (element) => {
-  return document.createElement(element);
+let createElement = (element, attriburtesArray, text) => {
+  let newElement = document.createElement(element);
+  if(!!attriburtesArray){
+    for(let i = 0; i < attriburtesArray.length; i++){
+      newElement.setAttribute(attriburtesArray[i].name, attriburtesArray[i].val);
+    }
+  }
+  if(!!text){
+    newElement.innerHTML = text;
+  }
+  return newElement;
 }
 
 export default {
