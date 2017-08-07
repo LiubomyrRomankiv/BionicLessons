@@ -1,0 +1,22 @@
+[
+	{
+		"link": "#Home",
+		"text": "Home"
+	},
+	{
+		"link": "#About",
+		"text": "About"
+	},
+	{
+		"link": "#Contacts",
+		"text": "Contacts"
+	},
+	{
+		"link": "#Products",
+		"text": "Products"
+	},
+	{
+		"link": "#Partners",
+		"text": "Partners"
+	}
+]

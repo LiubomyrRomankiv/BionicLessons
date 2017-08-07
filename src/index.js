@@ -2,22 +2,11 @@
 
 import sayHello from './user.js';
 import menu from './menu.js';
+import menuItemsList from './menu.json';
 // import './style.css';
 
 sayHello();
 
+menu.createMenu('wrapper', menuItemsList);
+
 menu.drawActiveMenuItems();
-
-
-
-let newElement = document.createElement('a');
-
-// newElement.innerHTML = '<span>This is my new link</span>';
-newElement.text = 'This is my new link';
-newElement.setAttribute('href', '#');
-// newElement.getAttribute('href'); // -> '#'
-
-
-let parentElement = document.body;
-
-parentElement.appendChild(newElement);
