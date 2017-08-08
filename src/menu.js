@@ -16,9 +16,17 @@ let drawActiveMenuItems = () => {
 
 let createMenu = ( selectorId, itemsArray ) => {
   let menuBlock = document.getElementById(selectorId);
-  let menu = document.createElement('ul');
-  menu.setAttribute('id','menu');
-  menu.setAttribute('class','menu');
+  let attributes = [
+    {
+      name: 'id',
+      val: 'menu'
+    },
+    {
+      name: 'class',
+      val: 'menu'
+    }
+  ];
+  let menu = createElement('ul', attributes);
   for (let i = 0; i < itemsArray.length; i++){
     let menuItem = createMenuItem(itemsArray[i], i);
     menu.appendChild(menuItem);
