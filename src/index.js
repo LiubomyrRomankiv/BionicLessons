@@ -2,6 +2,7 @@
 
 import sayHello from './user.js';
 import menu from './menu.js';
+import boxes from './box.js';
 import menuItemsList from './menu.json';
 import './main.scss';
 
