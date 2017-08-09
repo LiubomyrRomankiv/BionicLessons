@@ -1,19 +1,5 @@
 'use strict';
 
-let drawActiveMenuItems = () => {
-  let menuItems = document.querySelectorAll('.menu-item');
-  let hash = location.hash;
-  
-  for (let i = 0; i < menuItems.length; i++) {
-    let href = menuItems[i].getAttribute('href');
-    let classList = menuItems[i].getAttribute('class');
-    if (href === hash){
-      menuItems[i].setAttribute('class', classList + ' active');
-      break;
-    }
-  }
-};
-
 let createMenu = ( selectorId, itemsArray ) => {
   let menuBlock = document.getElementById(selectorId);
   let attributes = [
@@ -70,7 +56,44 @@ let createElement = (element, attriburtesArray, text) => {
   return newElement;
 }
 
+let initMenu = () => {
+  let menu = document.getElementById('menu');
+  let menuItems = menu.getElementsByTagName('a');
+  
+  menu.addEventListener('click', function(e){
+    drawActiveMenuItems(e.target);
+  });
+};
+
+let drawActiveMenuItems = (item) => {
+  let menu = document.getElementById('menu');
+  let activeMenuItem = menu.querySelector('.active');
+
+  if(!!activeMenuItem){
+    activeMenuItem.classList.remove('active');
+  }
+
+  if(!!item){
+    item.classList.add('active');
+  } else {
+    drawActiveMenuItemsHash();
+  }
+};
+
+let drawActiveMenuItemsHash = () => {
+  let menuItems = menu.querySelectorAll('.menu-item');
+  let hash = location.hash;
+  for (let i = 0; i < menuItems.length; i++) {
+    let href = menuItems[i].getAttribute('href');
+    if (href === hash){
+      menuItems[i].classList.add('active');
+      break;
+    }
+  }
+}
+
 export default {
   drawActiveMenuItems,
-  createMenu
+  createMenu,
+  initMenu
 };

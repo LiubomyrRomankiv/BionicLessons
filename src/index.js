@@ -8,5 +8,5 @@ import './main.scss';
 sayHello();
 
 menu.createMenu('wrapper', menuItemsList);
-
 menu.drawActiveMenuItems();
+menu.initMenu();
